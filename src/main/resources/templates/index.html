@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <a th:href="@{/livros/novo}" class="btn btn-primary mb-3">
+            Cadastrar Novo
+        </a>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Ano</th>
+                <th>Nr Paginas</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="livro : ${livros}">
+                    <!-- Exibindo os atributos do produto -->
+                    <td th:text="${livro.titulo}"></td>
+                    <td th:text="${livro.autor}"></td>
+                    <td th:text="${livro.ano_publicacao}"></td>
+                    <td th:text="${livro.num_paginas}"></td>
+                    <td th:text="${livro.preco}"></td>
+                    <td>
+                        <!-- 
+                        <form action="\livro\getById\${livro.id_livro}" method="get" class="d-inline">
+                            <button type="submit" class="btn btn-primary btn-sm">Visualizar</button>
+                        </form>
+                        <form action="" method="get" class="d-inline">
+                            <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+                        </form>
+                        <form action="" method="get" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                        </form> -->
+                        <form th:action="@{/livros/acao}" method="post">
+
+                            <input type="hidden" name="id" th:value="${livro.id_livro}"/>
+                        
+                            <a class="btn btn-primary btn-sm"
+                                th:href="@{/livros/view/{id}(id=${livro.id_livro})}">
+                                Visualizar
+                            </a>
+
+                            <a class="btn btn-warning btn-sm"
+                                th:href="@{/livros/edit/{id}(id=${livro.id_livro})}">
+                                Editar
+                            </a>
+                        
+                            <a class="btn btn-sm btn-danger"
+                                th:href="@{/livros/delete/{id}(id=${livro.id_livro})}"
+                                onclick="return confirm('Tem certeza que deseja excluir?');">
+                                Deletar
+                            </a>
+                        
+                            <input type="hidden" name="_method" id="_method" value="" />
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
