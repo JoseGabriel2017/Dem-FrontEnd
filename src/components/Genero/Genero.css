@@ -1,0 +1,56 @@
+.genero-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.genero-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.genero-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.genero-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.genero-container button:hover {
+    background-color: #0056b3;
+}
+
+.genero-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.genero-container li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genero-container li button {
+    background-color: #dc3545;
+    margin-left: 10px;
+}
+
+.genero-container li button:hover {
+    background-color: #c82333;
+}

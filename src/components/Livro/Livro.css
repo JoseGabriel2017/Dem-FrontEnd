@@ -1,0 +1,56 @@
+.livro-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.livro-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.livro-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.livro-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.livro-container button:hover {
+    background-color: #0056b3;
+}
+
+.livro-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.livro-container li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.livro-container li button {
+    background-color: #dc3545;
+    margin-left: 10px;
+}
+
+.livro-container li button:hover {
+    background-color: #c82333;
+}
